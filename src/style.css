@@ -58,9 +58,31 @@ body {
   padding: 0 2rem;
 }
 
+nav {
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(5, 5, 5, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition-fast);
+}
+
+nav .container {
+  height: 100%;
+}
+
 section {
   padding: var(--section-pad) 0;
   position: relative;
+}
+
+.hero {
+  padding-top: 180px; /* Account for fixed nav + spacing */
 }
 
 .flex { display: flex; }
@@ -73,9 +95,16 @@ section {
 .gap-2 { gap: 2rem; }
 .w-full { width: 100%; }
 
+.grid-balanced {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: stretch;
+  justify-content: center;
+}
+
 /* Typography Styles */
-h1 { font-size: var(--fs-h1); font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
-h2 { font-size: var(--fs-h2); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; }
+h1 { font-size: var(--fs-h1); font-weight: 800; line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 1rem; }
+h2 { font-size: var(--fs-h2); font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; }
 h3 { font-size: var(--fs-h3); font-weight: 700; }
 h4 { font-size: var(--fs-small); font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-muted); }
 
@@ -92,15 +121,17 @@ h4 { font-size: var(--fs-small); font-weight: 600; text-transform: uppercase; le
 
 /* Components */
 .glass-card {
-  background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.05); /* Slightly lighter for better visibility */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
   border-radius: var(--card-radius);
   padding: var(--card-pad);
   transition: var(--transition-slow);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .glass-card::before {
@@ -198,7 +229,7 @@ h4 { font-size: var(--fs-small); font-weight: 600; text-transform: uppercase; le
 }
 
 .leaflet-tile-pane {
-  filter: invert(100%) hue-rotate(180deg) brightness(85%) contrast(100%) grayscale(100%);
+  filter: invert(100%) hue-rotate(180deg) brightness(120%) contrast(85%) grayscale(100%) opacity(0.8);
 }
 
 .leaflet-container {
