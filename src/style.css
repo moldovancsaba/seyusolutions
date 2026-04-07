@@ -97,6 +97,52 @@ section {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
+/* Visibility Fix for Hero Animations */
+.hero h1, 
+.hero p, 
+.hero .glass-card, 
+.hero .tag {
+  opacity: 0;
+}
+
+/* Leaflet Map Styling */
+#map {
+  width: 100%;
+  height: 500px;
+  border-radius: 40px;
+  border: 1px solid var(--border);
+  margin-bottom: 4rem;
+  z-index: 10;
+  background: var(--bg-accent);
+}
+
+.leaflet-tile-pane {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%) grayscale(100%);
+}
+
+.leaflet-container {
+  background: var(--bg) !important;
+  font-family: var(--font-main) !important;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important;
+}
+
+.leaflet-control-zoom a {
+  background: var(--card-bg) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  backdrop-filter: blur(8px);
+}
+
+.leaflet-control-attribution {
+  background: transparent !important;
+  color: var(--text-muted) !important;
+  font-size: 0.6rem !important;
+}
+
 /* Buttons */
 .btn {
   padding: 1rem 2rem;

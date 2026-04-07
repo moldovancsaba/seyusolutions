@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seyu Solutions | Fan Engagement & Business ROI</title>
     <meta name="description" content="Translating fan entertainment into business value and ROI through data-driven tech solutions.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   </head>
   <body>
     <!-- Navbar -->
@@ -183,36 +184,8 @@
           <h2 style="font-size: 3rem;">Global Bullseye Precision</h2>
         </div>
 
-        <!-- World map SVG -->
-        <div style="width: 100%; height: 500px; background: radial-gradient(circle at center, #1a1500 0%, #050505 100%); border-radius: 40px; border: 1px solid var(--border); margin-bottom: 4rem; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-          <svg viewBox="0 0 1000 500" style="width: 100%; height: 100%; opacity: 0.2; pointer-events: none;">
-            <path fill="#fff" d="M211,101c-6,3-14,0-15-7c-1-6,3-11,9-12c6-1,12,3,13,9C218,97,215,100,211,101z M227,112c-5,0-10-4-10-10c0-5,4-10,10-10c5,0,10,4,10,10C237,108,233,112,227,112z M789,145c-2,0-4-2-4-4s2-4,4-4s4,2,4,4S791,145,789,145z M800,167c-2,0-4-2-4-4s2-4,4-4s4,2,4,4S802,167,800,167z" />
-            <!-- Symbolic world map path would go here, simplified -->
-            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="200" opacity="0.1" fill="white">MAP</text>
-          </svg>
-          
-          <!-- Pulsing Network Dots -->
-          <div class="pulse-dot" style="position: absolute; top: 30%; left: 25%;"></div>
-          <div class="pulse-dot" style="position: absolute; top: 45%; left: 55%;"></div>
-          <div class="pulse-dot" style="position: absolute; top: 65%; left: 80%;"></div>
-          <div class="pulse-dot" style="position: absolute; top: 75%; left: 35%;"></div>
-          
-          <style>
-            .pulse-dot {
-              width: 8px;
-              height: 8px;
-              background: var(--secondary);
-              border-radius: 50%;
-              box-shadow: 0 0 0 rgba(251, 191, 36, 0.4);
-              animation: pulse 2s infinite;
-            }
-            @keyframes pulse {
-              0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7); }
-              70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(251, 191, 36, 0); }
-              100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); }
-            }
-          </style>
-        </div>
+        <!-- World map container -->
+        <div id="map"></div>
 
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 4rem;">
           <div class="glass-card" style="border-color: var(--secondary-glow); text-align: center; font-size: 0.9rem;">Data-Driven Selection</div>
