@@ -165,18 +165,19 @@ h4 { font-size: var(--fs-small); font-weight: 600; text-transform: uppercase; le
 }
 
 .tag {
-  font-size: var(--fs-tag);
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  padding: 0.75rem 1.5rem;
-  border-radius: 12px;
+  letter-spacing: 0.2em;
+  padding: 1rem 2.5rem;
+  border-radius: 16px;
   background: var(--glass);
   border: 1px solid var(--border);
   color: var(--text);
   display: inline-block;
   white-space: nowrap;
   transition: var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .tag:hover {
