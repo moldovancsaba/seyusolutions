@@ -180,14 +180,17 @@ section {
 
 /* Utilities */
 .tag {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
+  letter-spacing: 0.15em;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
   background: var(--glass);
   border: 1px solid var(--border);
   color: var(--text-muted);
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .flex { display: flex; }
