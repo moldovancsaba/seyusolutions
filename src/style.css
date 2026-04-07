@@ -26,7 +26,7 @@
   
   /* Spacing */
   --container-max: 1240px;
-  --section-pad: clamp(4rem, 10vw, 9rem);
+  --section-pad: clamp(2.5rem, 5vw, 4.5rem);
   --card-pad: 2rem;
   --card-radius: 32px;
   
@@ -82,7 +82,7 @@ section {
 }
 
 .hero {
-  padding-top: 180px; /* Account for fixed nav + spacing */
+  padding-top: 150px; /* Account for fixed nav + spacing */
 }
 
 .flex { display: flex; }
@@ -165,19 +165,19 @@ h4 { font-size: var(--fs-small); font-weight: 600; text-transform: uppercase; le
 }
 
 .tag {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  padding: 1rem 2.5rem;
-  border-radius: 16px;
+  letter-spacing: 0.25em;
+  padding: 1.2rem 3.5rem;
+  border-radius: 20px;
   background: var(--glass);
   border: 1px solid var(--border);
   color: var(--text);
   display: inline-block;
   white-space: nowrap;
   transition: var(--transition-fast);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
 }
 
 .tag:hover {
