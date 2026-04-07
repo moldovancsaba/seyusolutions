@@ -10,8 +10,8 @@
   --secondary: #ff2d7a;
   --secondary-glow: rgba(255, 45, 122, 0.2);
   --accent: #00e5ff;
-  --text: #f8fafc;
-  --text-muted: #94a3b8;
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.85);
   --glass: rgba(255, 255, 255, 0.03);
   --border: rgba(255, 255, 255, 0.08);
   
@@ -130,7 +130,7 @@ h4 { font-size: var(--fs-small); font-weight: 600; text-transform: uppercase; le
 
 .green-text { color: var(--primary); }
 .yellow-text { color: var(--secondary); }
-.muted { color: var(--text-muted); }
+.muted { color: var(--text); opacity: 0.8; }
 
 /* Components */
 .glass-card {
