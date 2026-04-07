@@ -182,14 +182,67 @@ h4 { font-size: var(--fs-small); font-weight: 600; text-transform: uppercase; le
 
 .tag:hover {
   background: rgba(255,255,255,0.08);
-  border-color: var(--text-muted);
+  border-color: var(--primary);
+  transform: translateY(-2px);
 }
 
-/* Visibility Fix for Hero Animations */
-.hero h1, 
-.hero p, 
-.hero .glass-card, 
-.hero .tag-cloud .tag {
+/* --- Native Animations --- */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.revealed {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* Stagger Helpers */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+
+/* Visibility Fix for Hero (No FOUC) */
+.hero .reveal, 
+.hero .reveal-up {
   opacity: 0;
 }
 
