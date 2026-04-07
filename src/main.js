@@ -16,66 +16,68 @@ document.addEventListener('DOMContentLoaded', () => {
 function animateHero() {
     const tl = gsap.timeline()
     
-    // Set initial opacity to 0 just in case CSS hasn't loaded
-    gsap.set('.hero h1, .hero p, .hero .glass-card, .hero .tag', { opacity: 0 })
-
+    // Set initial states for elements hidden in CSS
+    // This allows them to stay hidden until this exact moment
     tl.to('.hero h1', {
         y: 0,
         opacity: 1,
-        duration: 1,
+        duration: 1.2,
         ease: 'power4.out',
-        startAt: { y: 50 }
+        startAt: { y: 60 }
     })
     .to('.hero p', {
         y: 0,
         opacity: 1,
-        duration: 0.8,
+        duration: 1,
         ease: 'power3.out',
-        startAt: { y: 20 }
-    }, '-=0.6')
+        startAt: { y: 30 }
+    }, '-=0.8')
     .to('.hero .glass-card', {
         y: 0,
         opacity: 1,
-        duration: 0.8,
-        stagger: 0.2,
+        duration: 1,
+        stagger: 0.15,
         ease: 'power3.out',
         startAt: { y: 40 }
-    }, '-=0.4')
-    .to('.hero .tag', {
+    }, '-=0.6')
+    .to('.hero .tag-cloud .tag', {
         scale: 1,
         opacity: 1,
-        duration: 0.5,
+        duration: 0.6,
         stagger: 0.1,
         ease: 'back.out(1.7)',
         startAt: { scale: 0.8 }
-    }, '-=0.4')
+    }, '-=0.6')
 }
 
 function animateProcess() {
-    // Animate user icons floating
+    // Floating animations (Looping)
     gsap.to('.user-icon', {
-        y: -10,
-        duration: 1.5,
+        y: -15,
+        duration: 2,
         repeat: -1,
         yoyo: true,
-        stagger: 0.2,
+        stagger: 0.3,
         ease: 'sine.inOut'
     })
 
-    // Animate flow arrows
-    gsap.from('.arrow-vertical, .flow-line', {
-        height: 0,
-        duration: 1.5,
-        scrollTrigger: {
-            trigger: '#process',
-            start: 'top 70%',
-        }
+    // Scroll-triggered flow lines
+    gsap.utils.toArray('.flow-line').forEach(line => {
+        gsap.from(line, {
+            height: 0,
+            duration: 1.5,
+            ease: 'power1.inOut',
+            scrollTrigger: {
+                trigger: line,
+                start: 'top 80%',
+            }
+        })
     })
 
-    // Float the core boxes
+    // Float the core containers
     gsap.to('.core-box, .business-box', {
-        y: -5,
-        duration: 2,
+        y: -8,
+        duration: 2.5,
         repeat: -1,
         yoyo: true,
         ease: 'sine.inOut'
@@ -83,40 +85,38 @@ function animateProcess() {
 }
 
 function animateSections() {
-    // Stagger logo appearance
-    gsap.from('.logo-placeholder', {
-        scale: 0,
-        opacity: 0,
-        duration: 0.5,
-        stagger: 0.1,
-        scrollTrigger: {
-            trigger: '.logo-grid',
-            start: 'top 85%'
-        }
-    })
-
-    // Fade in sections
+    // Fade in sections with staggered children
     gsap.utils.toArray('section').forEach(section => {
         if (section.classList.contains('hero')) return
         
-        gsap.from(section.querySelectorAll('.glass-card'), {
-            y: 50,
+        const content = section.querySelectorAll('.glass-card, .logo-placeholder, h2')
+        
+        gsap.from(content, {
+            y: 40,
             opacity: 0,
             duration: 1,
-            stagger: 0.2,
+            stagger: 0.1,
+            ease: 'power2.out',
             scrollTrigger: {
                 trigger: section,
-                start: 'top 80%'
+                start: 'top 75%'
             }
         })
     })
 }
 
 function initMap() {
+    // MAP FREEZING: Disabling all interactions to serve as a high-fidelity visual
     const map = L.map('map', {
-        center: [20, 10],
-        zoom: 2,
-        zoomControl: true,
+        center: [25, 15],
+        zoom: 2.5,
+        dragging: false,           // Freeze panning
+        zoomControl: false,        // Freeze zooming (UI)
+        scrollWheelZoom: false,    // Freeze zooming (Mouse)
+        doubleClickZoom: false,    // Freeze zooming (Interaction)
+        boxZoom: false,
+        touchZoom: false,
+        keyboard: false,
         attributionControl: true
     })
 
@@ -125,33 +125,43 @@ function initMap() {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map)
 
-    // Sample data points matching the "network"
-    const points = [
-        [51.5, -0.09], // London
-        [40.71, -74.00], // NYC
-        [25.20, 55.27], // Dubai
-        [35.67, 139.65], // Tokyo
-        [-23.55, -46.63] // Brazil
+    // Global Network Data Points
+    const networkNodes = [
+        [51.505, -0.09],   // London
+        [40.7128, -74.006], // NYC
+        [25.2048, 55.2708], // Dubai
+        [35.6762, 139.6503], // Tokyo
+        [-23.5505, -46.6333], // São Paulo
+        [-33.8688, 151.2093], // Sydney
+        [1.3521, 103.8198], // Singapore
+        [48.8566, 2.3522]   // Paris
     ]
 
-    const customIcon = L.divIcon({
-        className: 'custom-div-icon',
-        html: "<div style='background-color:var(--secondary); width: 10px; height: 10px; border-radius: 50%; box-shadow: 0 0 10px var(--secondary);'></div>",
-        iconSize: [10, 10],
-        iconAnchor: [5, 5]
+    const nodeIcon = L.divIcon({
+        className: 'network-node',
+        html: `<div style="
+            background: var(--secondary);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--secondary-glow);
+            animation: pulse 2s infinite ease-in-out;
+        "></div>`,
+        iconSize: [12, 12],
+        iconAnchor: [6, 6]
     })
 
-    points.forEach(p => {
-        L.marker(p, { icon: customIcon }).addTo(map)
+    networkNodes.forEach(coords => {
+        L.marker(coords, { icon: nodeIcon }).addTo(map)
     })
 }
 
-// Hover effects for logo placeholders
-document.querySelectorAll('.logo-placeholder').forEach(logo => {
-    logo.addEventListener('mouseenter', () => {
-        gsap.to(logo, { scale: 1.1, backgroundColor: 'rgba(57, 255, 20, 0.1)', duration: 0.3 })
+// Global Micro-interactions
+document.querySelectorAll('.logo-placeholder, .glass-card, .tag').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        gsap.to(el, { scale: 1.02, duration: 0.3, ease: 'power2.out' })
     })
-    logo.addEventListener('mouseleave', () => {
-        gsap.to(logo, { scale: 1, backgroundColor: 'rgba(255, 255, 255, 0.03)', duration: 0.3 })
+    el.addEventListener('mouseleave', () => {
+        gsap.to(el, { scale: 1, duration: 0.3, ease: 'power2.out' })
     })
 })

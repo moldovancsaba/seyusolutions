@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seyu Solutions | Fan Engagement & Business ROI</title>
     <meta name="description" content="Translating fan entertainment into business value and ROI through data-driven tech solutions.">
@@ -10,55 +10,49 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="container flex space-between centered" style="height: 80px; position: fixed; top: 0; left: 50%; transform: translateX(-50%); width: 100%; z-index: 1000;">
-      <div class="logo" style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">seyu<span style="color: white;">solutions</span></div>
-      <div class="flex gap" style="gap: 2rem;">
-        <a href="#" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Book a Consultation</a>
-      </div>
+    <nav class="container flex space-between v-centered" style="height: 100px; position: fixed; top: 0; left: 50%; transform: translateX(-50%); width: 100%; z-index: 1000;">
+      <div class="logo">seyu<span style="color: white;">solutions</span></div>
+      <a href="#" class="btn btn-primary" style="padding: 0.8rem 1.6rem;">Book Consultation</a>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero container">
-      <div style="margin-bottom: 4rem; text-align: center; padding-top: 60px;">
-        <h1 style="font-size: clamp(3rem, 8vw, 6rem); margin-bottom: 1rem;" class="gradient-text">Powering Fan Experience</h1>
-        <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Everything you need to turn passion into profit across the global sports and entertainment landscape.</p>
+    <section class="hero container text-center">
+      <div class="hero-content">
+        <h1 class="gradient-text">Powering Fan Experience</h1>
+        <p class="muted" style="max-width: 600px; margin: 1.5rem auto 4rem; font-size: 1.25rem;">Everything you need to turn passion into profit across the global sports and entertainment landscape.</p>
       </div>
 
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-        <!-- Card 1 -->
-        <div class="glass-card">
-          <h3 style="margin-bottom: 1.5rem;">The Force from any seat</h3>
-          <div class="stats" style="display: flex; flex-direction: column; gap: 0.5rem;">
-            <div><span class="green-text" style="font-weight: 800;">32</span> Countries</div>
-            <div><span class="green-text" style="font-weight: 800;">3000+</span> Events</div>
-            <div><span class="green-text" style="font-weight: 800;">1M+</span> Fans</div>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+        <div class="glass-card text-center">
+          <h3 style="margin-bottom: 2rem;">The Force from any seat</h3>
+          <div class="flex" style="flex-direction: column; gap: 1rem;">
+            <div><span class="green-text stats-val">32</span> Countries</div>
+            <div><span class="green-text stats-val">3000+</span> Events</div>
+            <div><span class="green-text stats-val">1M+</span> Fans</div>
           </div>
         </div>
-        <!-- Card 2 -->
-        <div class="glass-card">
-          <h3 style="margin-bottom: 1.5rem;">The Agency</h3>
-          <div class="stats">
-            <div><span class="green-text" style="font-weight: 800;">600,000+</span></div>
-            <div style="font-size: 0.9rem; color: var(--text-muted);">Spot Inclusion Network</div>
+        <div class="glass-card text-center">
+          <h3 style="margin-bottom: 2rem;">The Agency</h3>
+          <div class="flex" style="flex-direction: column; gap: 1rem;">
+            <div class="green-text stats-val">600,000+</div>
+            <p class="muted">Spot Inclusion Network</p>
           </div>
         </div>
-        <!-- Card 3 -->
-        <div class="glass-card">
-          <h3 style="margin-bottom: 1.5rem;">The Tech Kit</h3>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">Comprehensive solutions for News, Video, Photo, and Social integration.</p>
+        <div class="glass-card text-center">
+          <h3 style="margin-bottom: 2rem;">The Tech Kit</h3>
+          <p class="muted">Comprehensive solutions for News, Video, Photo, and Social integration.</p>
         </div>
-        <!-- Card 4 -->
-        <div class="glass-card">
-          <h3 style="margin-bottom: 1.5rem;">Venue Profitability</h3>
-          <div class="stats">
-            <div class="green-text" style="font-size: 2rem; font-weight: 800;">+75%</div>
-            <div style="font-size: 0.9rem; color: var(--text-muted);">Average Profit Increase</div>
+        <div class="glass-card text-center">
+          <h3 style="margin-bottom: 2rem;">Venue Profitability</h3>
+          <div class="flex" style="flex-direction: column; gap: 1rem;">
+            <div class="green-text stats-val">+75%</div>
+            <p class="muted">Average Profit Increase</p>
           </div>
         </div>
       </div>
 
       <!-- Tag Cloud -->
-      <div class="flex centered" style="gap: 1rem; margin-top: 3rem; flex-wrap: wrap;">
+      <div class="tag-cloud flex centered gap-1" style="margin-top: 5rem; flex-wrap: wrap;">
         <span class="tag">Sport</span>
         <span class="tag">Comm</span>
         <span class="tag">TV</span>
@@ -67,65 +61,49 @@
     </section>
 
     <!-- Process Diagram Section -->
-    <section id="process" class="container" style="text-align: center;">
-      <h2 style="margin-bottom: 3rem;">Data-Driven Intelligence</h2>
-      <div class="diagram-container" style="position: relative; padding: 4rem; max-width: 900px; margin: 0 auto; background: radial-gradient(circle at center, rgba(57, 255, 20, 0.03) 0%, transparent 70%); border-radius: 40px; border: 1px solid var(--border); overflow: hidden;">
+    <section id="process" class="container text-center">
+      <h2 style="margin-bottom: 4rem;">Data-Driven Intelligence</h2>
+      <div class="diagram-container glass-card" style="padding: 6rem 2rem; background: radial-gradient(circle at center, rgba(57, 255, 20, 0.05) 0%, transparent 80%);">
         
-        <!-- Animated Background Grid -->
-        <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.2;" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-
-        <div class="users-source" style="margin-bottom: 2rem;">
-          <div class="flex centered" style="gap: 1.5rem;">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="user-icon" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="user-icon" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="user-icon" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="user-icon" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="user-icon" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <div class="users-source" style="margin-bottom: 3rem;">
+          <div class="flex centered gap-2">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="user-icon" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="user-icon" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="user-icon" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="user-icon" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
           </div>
         </div>
         
-        <div class="flow-line" style="height: 60px; width: 2px; background: linear-gradient(to bottom, transparent, var(--primary)); margin: 0 auto; position: relative;">
-          <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 8px; height: 8px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 15px var(--primary);"></div>
+        <div class="flow-line w-full" style="height: 80px; width: 2px; background: linear-gradient(to bottom, transparent, var(--primary)); margin: 0 auto;"></div>
+
+        <div class="core-box glass-card" style="display: inline-block; padding: 2.5rem 5rem; border-color: var(--primary);">
+            <h3 class="green-text" style="font-size: 2rem;">Seya Tools</h3>
+            <p class="muted" style="margin-top: 0.5rem; letter-spacing: 0.2em; font-weight: 700;">DATA + DATA = <span class="green-text">$$</span></p>
         </div>
 
-        <div class="core-box glass-card" style="display: inline-block; padding: 2rem 4rem; border-color: var(--primary); margin: 1rem 0;">
-            <h3 class="green-text" style="font-size: 1.5rem;">Seya Tools</h3>
-            <p style="font-size: 0.8rem; margin-top: 0.5rem; letter-spacing: 0.1em; opacity: 0.8;">DATA + DATA = <span class="green-text" style="font-weight: 800;">$$</span></p>
-        </div>
+        <div class="flow-line w-full" style="height: 80px; width: 2px; background: linear-gradient(to bottom, var(--primary), transparent); margin: 0 auto;"></div>
 
-        <div class="flow-line" style="height: 60px; width: 2px; background: linear-gradient(to bottom, var(--primary), transparent); margin: 0 auto; position: relative;">
-           <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 8px; height: 8px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 15px var(--primary);"></div>
-        </div>
-
-        <div class="business-box glass-card" style="display: inline-block; padding: 2.5rem 5rem; border-color: rgba(255,255,255,0.2);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Your Venture & Goals</h3>
-            <div class="flex" style="gap: 1.5rem; justify-content: center;">
+        <div class="business-box glass-card" style="display: inline-block; padding: 3rem 6rem;">
+            <h3 style="margin-bottom: 2rem; font-size: 2rem;">Your Venture & Goals</h3>
+            <div class="flex centered gap-1">
               <span class="tag">Access DRC</span>
               <span class="tag">Intelligence</span>
               <span class="tag">ROI Driving</span>
             </div>
         </div>
 
-        <!-- Lateral Inputs -->
-        <div class="flex centered" style="gap: 4rem; margin-top: 3rem; opacity: 0.6;">
+        <div class="flex centered gap-2" style="margin-top: 5rem; opacity: 0.5;">
           <div class="flex centered" style="flex-direction: column; gap: 0.5rem;">
-            <div style="font-size: 1.2rem;">🏢</div>
-            <span style="font-size: 0.7rem;">Organisms</span>
+            <div style="font-size: 1.5rem;">🏢</div>
+            <h4>Organisms</h4>
           </div>
           <div class="flex centered" style="flex-direction: column; gap: 0.5rem;">
-            <div style="font-size: 1.2rem;">🏷️</div>
-            <span style="font-size: 0.7rem;">Brands</span>
+            <div style="font-size: 1.5rem;">🏷️</div>
+            <h4>Brands</h4>
           </div>
           <div class="flex centered" style="flex-direction: column; gap: 0.5rem;">
-            <div style="font-size: 1.2rem;">🚀</div>
-            <span style="font-size: 0.7rem;">Companies</span>
+            <div style="font-size: 1.5rem;">🚀</div>
+            <h4>Companies</h4>
           </div>
         </div>
       </div>
@@ -134,39 +112,38 @@
     <!-- Section 1: Engagement -->
     <section class="engagement-section" style="background: linear-gradient(180deg, var(--bg) 0%, #061006 100%);">
       <div class="container">
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 4rem;">
-          <div class="glass-card" style="border-color: var(--primary-glow); text-align: center;">Fan Photos</div>
-          <div class="glass-card" style="border-color: var(--primary-glow); text-align: center;">Raffles/Games</div>
-          <div class="glass-card" style="border-color: var(--primary-glow); text-align: center;">Greenbox</div>
-          <div class="glass-card" style="border-color: var(--primary-glow); text-align: center;">AI Solutions</div>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 6rem;">
+          <div class="glass-card text-center">Fan Photos</div>
+          <div class="glass-card text-center">Raffles/Games</div>
+          <div class="glass-card text-center">Greenbox</div>
+          <div class="glass-card text-center">AI Solutions</div>
         </div>
         
-        <div style="text-align: center; margin-bottom: 5rem;">
-          <h2 style="font-size: 3rem; margin-bottom: 1rem;" class="green-text">Business Enhancing True Engagement</h2>
-          <p style="font-style: italic; color: var(--text-muted);">Fan entertainment translated into business value - ROI</p>
+        <div class="text-center" style="margin-bottom: 6rem;">
+          <h2 class="green-text" style="margin-bottom: 1.5rem;">Business Enhancing True Engagement</h2>
+          <p class="muted" style="font-style: italic;">Fan entertainment translated into business value - ROI</p>
         </div>
 
-        <!-- Business Grid 1 -->
-        <h4 style="margin-bottom: 2rem;">Businesses that benefited from our work</h4>
-        <div class="logo-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 2rem; opacity: 0.6;">
-          <div class="logo-placeholder" style="aspect-ratio: 1; background: var(--glass); border-radius: 50%; display: flex; align-items: center; justify-content: center;">LEGO</div>
-          <div class="logo-placeholder" style="aspect-ratio: 1; background: var(--glass); border-radius: 50%; display: flex; align-items: center; justify-content: center;">UAE</div>
-          <div class="logo-placeholder" style="aspect-ratio: 1; background: var(--glass); border-radius: 50%; display: flex; align-items: center; justify-content: center;">ROG</div>
-          <div class="logo-placeholder" style="aspect-ratio: 1; background: var(--glass); border-radius: 50%; display: flex; align-items: center; justify-content: center;">LAL</div>
-          <div class="logo-placeholder" style="aspect-ratio: 1; background: var(--glass); border-radius: 50%; display: flex; align-items: center; justify-content: center;">FCB</div>
-          <div class="logo-placeholder" style="aspect-ratio: 1; background: var(--glass); border-radius: 50%; display: flex; align-items: center; justify-content: center;">MCF</div>
+        <h4>Partner Success</h4>
+        <div class="logo-grid grid" style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 3rem; margin-top: 3rem; opacity: 0.7;">
+          <div class="logo-placeholder">LEGO</div>
+          <div class="logo-placeholder">UAE</div>
+          <div class="logo-placeholder">ROG</div>
+          <div class="logo-placeholder">LAL</div>
+          <div class="logo-placeholder">FCB</div>
+          <div class="logo-placeholder">MCF</div>
         </div>
 
-        <div class="flex centered" style="gap: 2rem; margin-top: 5rem; flex-wrap: wrap;">
-          <div class="glass-card" style="flex: 1; min-width: 300px; border-color: var(--primary);">
-            <h4 class="green-text">SaaS Marketplace</h4>
-            <p style="margin-bottom: 1.5rem;">Access our proprietary tools directly.</p>
-            <a href="#" class="btn btn-primary">Buy Package</a>
+        <div class="flex space-between gap-2" style="margin-top: 8rem; flex-wrap: wrap;">
+          <div class="glass-card" style="flex: 1; min-width: 320px; border-color: var(--primary);">
+            <h3 class="green-text" style="margin-bottom: 1rem;">SaaS Marketplace</h3>
+            <p class="muted" style="margin-bottom: 2rem;">Access our proprietary toolset directly for immediate engagement impact.</p>
+            <a href="#" class="btn btn-primary">Purchase Package</a>
           </div>
-          <div class="glass-card" style="flex: 1; min-width: 300px; background: rgba(57, 255, 20, 0.05);">
-            <h4>Premium Goals</h4>
-            <p style="margin-bottom: 1.5rem;">Tailored strategy and execution with our experts.</p>
-            <a href="#" class="btn btn-outline">Book Consultation</a>
+          <div class="glass-card" style="flex: 1; min-width: 320px; background: rgba(57, 255, 20, 0.05);">
+            <h3 style="margin-bottom: 1rem;">Premium Goals</h3>
+            <p class="muted" style="margin-bottom: 2rem;">Tailored high-level strategy and execution with our industry-leading experts.</p>
+            <a href="#" class="btn btn-outline">Schedule Consultation</a>
           </div>
         </div>
       </div>
@@ -175,43 +152,30 @@
     <!-- Section 2: Global Network -->
     <section class="network-section" style="background: linear-gradient(180deg, #061006 0%, #100a00 100%);">
       <div class="container">
-        <div style="text-align: center; margin-bottom: 4rem;">
-          <h4 class="yellow-text" style="letter-spacing: 0.3em; margin-bottom: 1rem;">OUR NETWORK</h4>
-          <h2 style="font-size: 3rem;">Global Bullseye Precision</h2>
+        <div class="text-center" style="margin-bottom: 5rem;">
+          <h4 class="yellow-text" style="margin-bottom: 1.5rem;">OUR NETWORK</h4>
+          <h2 style="margin-bottom: 1.5rem;">Global Bullseye Precision</h2>
+          <p class="muted">A world-spanning network of presence and profit.</p>
         </div>
 
-        <!-- World map container -->
         <div id="map"></div>
 
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 4rem;">
-          <div class="glass-card" style="border-color: var(--secondary-glow); text-align: center; font-size: 0.9rem;">Data-Driven Selection</div>
-          <div class="glass-card" style="border-color: var(--secondary-glow); text-align: center; font-size: 0.9rem;">Experience Advert</div>
-          <div class="glass-card" style="border-color: var(--secondary-glow); text-align: center; font-size: 0.9rem;">Brand Diff.</div>
-          <div class="glass-card" style="border-color: var(--secondary-glow); text-align: center; font-size: 0.9rem;">Funnel Measure</div>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 4rem;">
+          <div class="glass-card text-center" style="font-size: 1rem;">Data-Driven Asset Selection</div>
+          <div class="glass-card text-center" style="font-size: 1rem;">Engaging Experience Advert</div>
+          <div class="glass-card text-center" style="font-size: 1rem;">Brand Differentiation</div>
+          <div class="glass-card text-center" style="font-size: 1rem;">Custom Funnel Measurement</div>
         </div>
 
-        <div style="text-align: center; margin-bottom: 5rem;">
-          <h2 style="font-size: 3rem; margin-bottom: 1rem;" class="yellow-text">Market Entry & Investment</h2>
-        </div>
-
-        <!-- Business Grid 2 -->
-        <h4 style="margin-bottom: 2rem;">Businesses that benefited from our work</h4>
-        <div class="logo-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 2rem; opacity: 0.6;">
-          <div class="logo-placeholder" style="aspect-ratio: 1; background: var(--glass); border-radius: 50%; display: flex; align-items: center; justify-content: center;">SGP</div>
-          <div class="logo-placeholder" style="aspect-ratio: 1; background: var(--glass); border-radius: 50%; display: flex; align-items: center; justify-content: center;">UAE</div>
-          <div class="logo-placeholder" style="aspect-ratio: 1; background: var(--glass); border-radius: 50%; display: flex; align-items: center; justify-content: center;">LIS</div>
-          <div class="logo-placeholder" style="aspect-ratio: 1; background: var(--glass); border-radius: 50%; display: flex; align-items: center; justify-content: center;">NYC</div>
-          <div class="logo-placeholder" style="aspect-ratio: 1; background: var(--glass); border-radius: 50%; display: flex; align-items: center; justify-content: center;">JPN</div>
-        </div>
-
-        <div style="text-align: center; margin-top: 6rem;">
-          <a href="#" class="btn btn-primary" style="background: var(--secondary); padding: 1.5rem 4rem; font-size: 1.2rem;">Book a Strategic Consultation</a>
+        <div class="text-center" style="margin: 8rem 0;">
+          <h2 class="yellow-text" style="margin-bottom: 4rem;">Market Entry & Investment</h2>
+          <a href="#" class="btn btn-primary" style="background: var(--secondary); padding: 1.5rem 5rem; font-size: 1rem;">Start Global Partnership</a>
         </div>
       </div>
     </section>
 
-    <footer class="container" style="padding: 40px 0; border-top: 1px solid var(--border); margin-top: 100px; opacity: 0.5; font-size: 0.8rem; text-align: center;">
-      <p>&copy; 2026 Seyu Solutions. All rights reserved.</p>
+    <footer class="container text-center" style="padding: 60px 0; border-top: 1px solid var(--border); margin-top: 100px; opacity: 0.4;">
+      <p>&copy; 2026 Seyu Solutions. All rights reserved. Building the future of fan economy.</p>
     </footer>
 
     <script type="module" src="/src/main.js"></script>
