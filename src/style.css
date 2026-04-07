@@ -134,9 +134,9 @@ h4 { font-size: var(--fs-small); font-weight: 600; text-transform: uppercase; le
 
 /* Components */
 .glass-card {
-  background: rgba(255, 255, 255, 0.05); /* Slightly lighter for better visibility */
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.12); /* Increased opacity for better visibility */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border);
   border-radius: var(--card-radius);
   padding: var(--card-pad);
