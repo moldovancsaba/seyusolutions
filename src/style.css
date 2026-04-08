@@ -118,7 +118,10 @@ section { padding: var(--pad-section) 0; }
   .u-section-gap { margin-bottom: 8rem; }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 600px) { .grid-4 { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { 
+  .grid-4, .u-cta-grid { grid-template-columns: 1fr !important; } 
+  .u-distribute-evenly { flex-direction: column !important; gap: 2rem !important; }
+}
 
 /* --- DISTRIBUTION UTILITIES (RIGID) --- */
 .u-distribute-evenly {
