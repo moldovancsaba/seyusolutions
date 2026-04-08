@@ -88,15 +88,21 @@ section { padding: var(--pad-section) 0; }
 .u-max-w-medium { max-width: 300px; width: 100%; }
 
 .u-cta-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--s-8);
-  max-width: 640px;
-  margin: 0 auto;
-  align-items: stretch;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: var(--s-8) !important;
+  max-width: 640px !important;
+  margin: 0 auto !important;
+  align-items: stretch !important;
+  justify-items: stretch !important;
 }
 
-.u-cta-grid .ui-btn { height: 100%; width: 100%; min-height: var(--s-16); }
+.u-cta-grid .ui-btn { 
+  height: 100% !important; 
+  width: 100% !important; 
+  min-height: var(--s-16) !important;
+  box-sizing: border-box !important;
+}
 
 /* Absolute Vertical Symmetry for Intelligence */
 .u-intelligence-stack {
