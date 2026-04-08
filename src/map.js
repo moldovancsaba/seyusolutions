@@ -6,6 +6,9 @@ if (canvas) {
     const width = 1000;
     const height = 400;
 
+    // Fetch Design System Tokens
+    const getThemeColor = (prop) => getComputedStyle(document.documentElement).getPropertyValue(prop).trim();
+
     // Function to convert Lat/Lon to X/Y pixels on a 1000x400 canvas
     function getCoordinates(lat, lon) {
         const x = (lon + 180) * (width / 360);
@@ -14,7 +17,7 @@ if (canvas) {
     }
 
     // ==========================================
-    // SECTION 1: BACKGROUND CITIES (ULTRA-DENSE WHITE)
+    // SECTION 1: BACKGROUND CITIES (ULTRA-DENSE)
     // ==========================================
     const backgroundCities = [
         // North America (High Density)
@@ -72,14 +75,9 @@ if (canvas) {
         { lat: -18.14, lon: 178.44 }, { lat: -13.83, lon: -171.75 }, { lat: -21.13, lon: -175.20 }
     ];
 
-    // ==========================================
-    // HIGHLIGHTED CITIES (Cyan & Pink)
-    // ==========================================
     const cyanCities = [
         { lat: 47.4979, lon: 19.0402 }, // Budapest
         { lat: 39.4699, lon: -0.3774 }, // Valencia
-        { lat: 40.4168, lon: -3.7038 }, // Madrid
-        { lat: 52.3676, lon: 4.9041 },  // Amsterdam
         { lat: 40.7128, lon: -74.0060 }, // New York
         { lat: 1.3521,  lon: 103.8198 }, // Singapore
         { lat: 25.2048, lon: 55.2708 },  // Dubai
@@ -90,7 +88,6 @@ if (canvas) {
         { lat: 51.5074, lon: -0.1278 }, // London
         { lat: 48.8566, lon: 2.3522 },  // Paris
         { lat: -33.8688, lon: 151.2093 }, // Sydney
-        { lat: -23.5505, lon: -46.6333 }, // Sao Paulo
         { lat: 19.0760, lon: 72.8777 }   // Mumbai
     ];
 
@@ -98,8 +95,13 @@ if (canvas) {
     function render() {
         ctx.clearRect(0, 0, width, height);
 
-        // Draw Background Cities (100% White)
-        ctx.fillStyle = '#ffffff';
+        // Synchronize with Theme CSS Tokens
+        const colPrimary = getThemeColor('--primary') || '#00e5ff';
+        const colSecondary = getThemeColor('--secondary') || '#ff2d7a';
+        const colWhite = getThemeColor('--text') || '#ffffff';
+
+        // Draw Background Cities
+        ctx.fillStyle = colWhite;
         backgroundCities.forEach(city => {
             const pos = getCoordinates(city.lat, city.lon);
             ctx.beginPath();
@@ -118,14 +120,12 @@ if (canvas) {
                 ctx.arc(pos.x, pos.y, 8.5, 0, Math.PI * 2);
                 ctx.fill();
             });
-            ctx.shadowBlur = 0; // Reset glow
+            ctx.shadowBlur = 0; 
         };
 
-        drawHighlight(cyanCities, '#00e5ff');
-        drawHighlight(pinkCities, '#ff2d7a');
+        drawHighlight(cyanCities, colPrimary);
+        drawHighlight(pinkCities, colSecondary);
     }
 
     render();
 }
-
-
