@@ -50,6 +50,46 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Global Link Reset */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Legal & Documentation Pages Typography / Structure */
+.legal-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--s-4);
+}
+
+.legal-section {
+  margin-bottom: var(--s-8);
+  text-align: left;
+}
+
+.legal-section h3 {
+  color: var(--primary);
+  margin-bottom: var(--s-2);
+}
+
+.legal-section p {
+  margin-bottom: var(--s-2);
+  opacity: 0.85;
+}
+
+.legal-section ul {
+  margin-left: var(--s-4);
+  margin-bottom: var(--s-4);
+  opacity: 0.85;
+  list-style-type: square;
+}
+
+.legal-section li {
+  margin-bottom: var(--s-1);
+}
+
 .container { max-width: var(--layout-width); margin: 0 auto; padding: 0 var(--s-4); width: 100%; }
 section { padding: var(--pad-section) 0; }
 
@@ -59,6 +99,7 @@ section { padding: var(--pad-section) 0; }
 .centered { display: flex; align-items: center; justify-content: center; }
 .space-between { justify-content: space-between; }
 .text-center { text-align: center; }
+.text-left { text-align: left; }
 .w-full { width: 100%; }
 
 .gap-s1 { gap: var(--s-1); }
@@ -149,6 +190,8 @@ p { font-size: var(--fs-body); opacity: 0.8; }
 }
 
 .cyan-text { color: var(--primary); }
+.pink-text { color: var(--secondary); }
+.white-text { color: var(--text); }
 .text-ui { font-size: var(--fs-ui); font-weight: 800; }
 .text-italic { font-style: italic; }
 
@@ -205,8 +248,8 @@ p { font-size: var(--fs-body); opacity: 0.8; }
 
 .ui-btn:hover { background: rgba(255,255,255,0.1); border-color: #fff; transform: scale(1.05); }
 
-.ui-btn--solid { background: var(--primary); color: #000; border: none; padding: var(--s-3) var(--s-8); }
-.ui-btn--solid-pink { background: var(--secondary); color: #000; border: none; padding: var(--s-3) var(--s-8); }
+.ui-btn--solid { background: var(--primary); color: var(--bg); border: none; padding: var(--s-3) var(--s-8); }
+.ui-btn--solid-pink { background: var(--secondary); color: var(--bg); border: none; padding: var(--s-3) var(--s-8); }
 .ui-btn--compact { font-size: 0.85rem; padding: var(--s-1) var(--s-2); }
 
 /* --- Map Framework --- */
@@ -234,7 +277,30 @@ p { font-size: var(--fs-body); opacity: 0.8; }
 
 .stats-val { font-size: var(--fs-h2); font-weight: 800; color: var(--primary); }
 
-.section-footer { padding: var(--s-12) 0; opacity: 0.5; text-align: center; }
+.ui-footer {
+  background: var(--bg-accent);
+  padding: var(--s-12) 0 var(--s-4) 0;
+  margin-top: var(--s-12);
+}
+
+.footer-link {
+  color: var(--text);
+  opacity: 0.7;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: var(--fs-body);
+}
+
+.footer-link:hover {
+  opacity: 1;
+  color: var(--primary);
+}
+
+.footer-bottom {
+  margin-top: var(--s-8);
+  padding-top: var(--s-4);
+  opacity: 0.5;
+}
 
 /* NO SHAPE STYLES / THIN LINES */
 hr, .border-bottom, .double-line { display: none !important; }
