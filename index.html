@@ -7,6 +7,27 @@
     <title>Seyu Solutions | Fan Engagement & Business ROI</title>
     <meta name="description" content="Translating fan entertainment into business value and ROI through data-driven tech solutions.">
     <link rel="stylesheet" href="./src/style.css">
+    <link rel="canonical" href="https://www.seyusolutions.com/" />
+    <meta name="theme-color" content="#050505" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Seyu Solutions" />
+    <meta property="og:title" content="Seyu Solutions | Fan Engagement &amp; Business ROI" />
+    <meta property="og:description" content="Translating fan entertainment into business value and ROI through data-driven tech solutions." />
+    <meta property="og:url" content="https://www.seyusolutions.com/" />
+    <meta property="og:image" content="https://www.seyusolutions.com/favicon.svg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Seyu Solutions | Fan Engagement &amp; Business ROI" />
+    <meta name="twitter:description" content="Translating fan entertainment into business value and ROI through data-driven tech solutions." />
+    <meta name="twitter:image" content="https://www.seyusolutions.com/favicon.svg" />
+
+    <!-- Fonts (moved out of CSS @import; preconnect + link for faster first paint) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
   <body>
     <!-- Navbar -->
@@ -46,10 +67,10 @@
       </div>
 
       <div class="grid-4 mb-s8">
-        <span class="ui-btn">Sport</span>
-        <span class="ui-btn">Comm</span>
-        <span class="ui-btn">TV</span>
-        <span class="ui-btn">Events</span>
+        <button type="button" class="ui-btn">Sport</button>
+        <button type="button" class="ui-btn">Comm</button>
+        <button type="button" class="ui-btn">TV</button>
+        <button type="button" class="ui-btn">Events</button>
       </div>
     </section>
 
@@ -121,6 +142,7 @@
           <div class="material-symbols-outlined stats-val">memory</div>
           <h4>AI SOLUTIONS</h4>
           <p class="mt-s4">AI-powered fan experiences that personalise content, automate interactions and create smarter, more engaging event journeys.</p>
+        </div>
       </div>
     </section>
       
@@ -169,7 +191,10 @@
       </div>
 
       <div class="world-map-wrapper u-header-gap">
-        <canvas id="worldMap" width="1000" height="400"></canvas>
+        <canvas id="worldMap" width="1000" height="400" role="img"
+          aria-label="World map highlighting Seyu Solutions' presence across 32 countries on five continents.">
+          Interactive world map showing Seyu Solutions' global presence across 32 countries.
+        </canvas>
       </div>
 
       <div class="grid-4 mb-s8">

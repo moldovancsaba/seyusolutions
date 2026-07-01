@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+/* Fonts (Outfit + Material Symbols) are loaded via <link rel="preconnect"> +
+   <link> tags in each page's <head> for faster first paint. */
 
 :root {
   /* 1. STRICT COLORS */
@@ -244,6 +244,16 @@ p { font-size: var(--fs-body); opacity: 0.8; }
   cursor: pointer;
   background: transparent;
   width: auto;
+  font-family: inherit;
+  line-height: 1;
+}
+
+/* Visible keyboard focus for all interactive controls */
+.ui-btn:focus-visible,
+.footer-link:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
 }
 
 .ui-btn:hover { background: rgba(255,255,255,0.1); border-color: #fff; transform: scale(1.05); }

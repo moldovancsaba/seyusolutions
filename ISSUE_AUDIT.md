@@ -112,3 +112,31 @@ on a Hungarian entity's pages — confirm these are intentional.
 audit, so the 11 findings above are offered as the initial backlog. The single concrete *bug* to
 fix first is **A‑1 (unclosed `<div>` in `index.html`)**; the biggest *product* gaps are
 **A‑2 (dead CTAs)** and **A‑3 (no deployment pipeline)**.
+
+---
+
+## 5. Resolution status (this branch)
+
+| ID | Finding | Status |
+|----|---------|--------|
+| A‑1 | Unclosed `<div>` in Engagement Core | ✅ Fixed — card closed, `index.html` div balance now 0 |
+| A‑2 | Dead CTAs (`href="#"`) | ⏳ Pending — needs a target decision (mailto vs contact page) |
+| A‑3 | No deployment pipeline | ⏳ Pending — needs a decision (add Pages workflow vs manual) |
+| B‑1 | Dead Vite‑starter files | ✅ Fixed — `counter.js`, `vite.svg`, `javascript.svg`, `hero.png` removed |
+| B‑2 | Missing `.gitignore` | ✅ Fixed — Node/Vite `.gitignore` added |
+| B‑3 | Accessibility gaps | ✅ Fixed — chips → `<button>`, canvas `role="img"` + `aria-label` + fallback, `:focus-visible` outlines |
+| B‑4 | Map blurry on wide/hi‑DPI | ✅ Fixed — `src/map.js` scales backing store to CSS px × DPR, re‑renders on resize |
+| C‑1 | SEO / social metadata | ✅ Fixed — canonical + OG/Twitter on all 4 pages, `robots.txt` + `sitemap.xml` added |
+| C‑2 | Render‑blocking font `@import` | ✅ Fixed — moved to `<head>` `preconnect` + `<link>`, removed from CSS |
+| C‑3 | Favicon under non‑root base | ✅ Verified — Vite rebases `/favicon.svg` → `/seyusolutions/favicon.svg` in build; added `apple-touch-icon` + `theme-color` |
+| C‑4 | Content consistency | ⏳ Pending — needs confirmation (stats, contact email, `lang`) |
+
+**Remaining (need your input):** A‑2 (CTA target), A‑3 (deploy strategy), C‑4 (content facts).
+A separate follow‑up is a proper raster **Open Graph image** (the current `og:image` points at the
+SVG favicon, which some social platforms don't render).
+
+### Not in the original 11 — new request
+- **Design system import** — importing/implementing *SEYU Design System.dc.html* from the Claude
+  Design project requires the `claude_design` MCP, which needs interactive `/design-login`
+  authorization that isn't available in this non‑interactive web session. Blocked pending auth or
+  a file drop (see chat).

@@ -93,6 +93,18 @@ if (canvas) {
 
     // Render Function
     function render() {
+        // Scale the backing store to the element's real pixel size so the map
+        // stays crisp on wide and high-DPI displays, while keeping the 1000x400
+        // logical coordinate system used by getCoordinates().
+        const rect = canvas.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
+        const pxW = Math.max(1, Math.round((rect.width || width) * dpr));
+        const pxH = Math.max(1, Math.round((rect.height || height) * dpr));
+        if (canvas.width !== pxW || canvas.height !== pxH) {
+            canvas.width = pxW;
+            canvas.height = pxH;
+        }
+        ctx.setTransform(pxW / width, 0, 0, pxH / height, 0, 0);
         ctx.clearRect(0, 0, width, height);
 
         // Synchronize with Theme CSS Tokens
@@ -128,4 +140,11 @@ if (canvas) {
     }
 
     render();
+
+    // Re-render on resize so the map stays crisp across breakpoints/orientation.
+    let resizeRaf = null;
+    window.addEventListener('resize', () => {
+        if (resizeRaf) cancelAnimationFrame(resizeRaf);
+        resizeRaf = requestAnimationFrame(render);
+    });
 }
