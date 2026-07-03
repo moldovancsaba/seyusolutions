@@ -120,8 +120,8 @@ fix first is **A‑1 (unclosed `<div>` in `index.html`)**; the biggest *product*
 | ID | Finding | Status |
 |----|---------|--------|
 | A‑1 | Unclosed `<div>` in Engagement Core | ✅ Fixed — card closed, `index.html` div balance now 0 |
-| A‑2 | Dead CTAs (`href="#"`) | ⏳ Pending — needs a target decision (mailto vs contact page) |
-| A‑3 | No deployment pipeline | ⏳ Pending — needs a decision (add Pages workflow vs manual) |
+| A‑2 | Dead CTAs (`href="#"`) | ✅ Fixed — all 5 CTAs point to `mailto:info@seyusolutions.com` with pre-filled subjects |
+| A‑3 | No deployment pipeline | ✅ Fixed — `.github/workflows/deploy.yml` builds and deploys `dist/` to GitHub Pages (requires Pages source = "GitHub Actions" in repo settings) |
 | B‑1 | Dead Vite‑starter files | ✅ Fixed — `counter.js`, `vite.svg`, `javascript.svg`, `hero.png` removed |
 | B‑2 | Missing `.gitignore` | ✅ Fixed — Node/Vite `.gitignore` added |
 | B‑3 | Accessibility gaps | ✅ Fixed — chips → `<button>`, canvas `role="img"` + `aria-label` + fallback, `:focus-visible` outlines |
@@ -131,7 +131,7 @@ fix first is **A‑1 (unclosed `<div>` in `index.html`)**; the biggest *product*
 | C‑3 | Favicon under non‑root base | ✅ Verified — Vite rebases `/favicon.svg` → `/seyusolutions/favicon.svg` in build; added `apple-touch-icon` + `theme-color` |
 | C‑4 | Content consistency | ⏳ Pending — needs confirmation (stats, contact email, `lang`) |
 
-**Remaining (need your input):** A‑2 (CTA target), A‑3 (deploy strategy), C‑4 (content facts).
+**Remaining (need your input):** C‑4 (content facts).
 A separate follow‑up is a proper raster **Open Graph image** (the current `og:image` points at the
 SVG favicon, which some social platforms don't render).
 
