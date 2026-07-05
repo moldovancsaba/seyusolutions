@@ -107,13 +107,13 @@ if (canvas) {
         ctx.setTransform(pxW / width, 0, 0, pxH / height, 0, 0);
         ctx.clearRect(0, 0, width, height);
 
-        // Synchronize with Theme CSS Tokens
-        const colPrimary = getThemeColor('--primary') || '#00e5ff';
-        const colSecondary = getThemeColor('--secondary') || '#ff2d7a';
-        const colWhite = getThemeColor('--text') || '#ffffff';
+        // Synchronize with SEYU theme tokens (dedicated map colors)
+        const colPrimary = getThemeColor('--map-hi-1') || '#B62684';
+        const colSecondary = getThemeColor('--map-hi-2') || '#0085C6';
+        const colCity = getThemeColor('--map-city') || '#7C8AA6';
 
         // Draw Background Cities
-        ctx.fillStyle = colWhite;
+        ctx.fillStyle = colCity;
         backgroundCities.forEach(city => {
             const pos = getCoordinates(city.lat, city.lon);
             ctx.beginPath();

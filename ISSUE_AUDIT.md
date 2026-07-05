@@ -136,7 +136,18 @@ A separate follow‑up is a proper raster **Open Graph image** (the current `og:
 SVG favicon, which some social platforms don't render).
 
 ### Not in the original 11 — new request
-- **Design system import** — importing/implementing *SEYU Design System.dc.html* from the Claude
-  Design project requires the `claude_design` MCP, which needs interactive `/design-login`
-  authorization that isn't available in this non‑interactive web session. Blocked pending auth or
-  a file drop (see chat).
+- **Design system import & implementation** — ✅ Done. The *SEYU Design System.dc.html* handoff
+  bundle was delivered as a zip and implemented as a full rebrand of the marketing site:
+  - **Tokens** (`src/style.css`): light Pearl background, Navy Ink `#1B1F3C` + Mist `#F2F6F9`
+    core, Magenta `#B62684` / Deep Blue `#2C5680` / Bright Blue `#0085C6` accents, 4px spacing
+    scale, radius scale (8/11/18/22/999px), Pearl + Deep Glow signature gradients.
+  - **Typography**: Anton (display) · Montserrat (body) · Space Mono (labels) — replacing Outfit.
+  - **Components**: pill buttons (999px, mist/magenta/blue/glass), white cards with hover lift,
+    dark featured panel, dark ink navbar + footer, Deep Glow hero with inline-SVG Seyu-leaf motifs.
+  - **Map**: restyled to a full-bleed Deep Glow band with magenta/bright-blue city highlights
+    (dedicated `--map-*` tokens read by `map.js`).
+  - **New section**: "Trusted Worldwide" partner logo wall (UEFA, MotoGP, EHF, Villarreal, CHL,
+    DVSC) using optimized brand assets in `public/brand/` (each ≤66 KB; MOL & MKOSZ omitted —
+    MOL's SVG fills didn't resolve, MKOSZ artwork carried dark bars).
+  - All four pages (`index` + 3 legal) re-skinned via the shared stylesheet; verified with
+    `npm run build` and Playwright screenshots (desktop, mobile, legal).
