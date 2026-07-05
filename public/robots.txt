@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.seyusolutions.com/sitemap.xml
+Sitemap: https://moldovancsaba.github.io/seyusolutions/sitemap.xml

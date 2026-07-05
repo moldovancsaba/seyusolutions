@@ -2,8 +2,8 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 export default defineConfig({
-  // Served at the root of the custom domain (see public/CNAME), so base is '/'.
-  base: '/',
+  // Served from the GitHub Pages project path: moldovancsaba.github.io/seyusolutions/
+  base: '/seyusolutions/',
   build: {
     rollupOptions: {
       input: {
