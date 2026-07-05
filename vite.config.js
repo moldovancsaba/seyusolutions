@@ -2,7 +2,8 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 export default defineConfig({
-  base: '/seyusolutions/',
+  // Served at the root of the custom domain (see public/CNAME), so base is '/'.
+  base: '/',
   build: {
     rollupOptions: {
       input: {
