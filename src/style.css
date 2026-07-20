@@ -535,9 +535,17 @@ nav {
 .cta-band h2 { color: #fff; }
 .cta-band p  { color: #C7D0E6; max-width: 52ch; margin: 14px auto 0; }
 
-/* --- 3-up grid + proof band --- */
+/* --- 2-up / 3-up grid + proof band --- */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3); }
+@media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-3); }
 @media (max-width: 700px) { .grid-3 { grid-template-columns: 1fr; } }
+
+/* Comparison cards */
+.compare-card { text-align: left; align-items: flex-start; }
+.compare-card--seyu { border-color: var(--magenta); box-shadow: 0 14px 34px rgba(182,38,132,0.12); }
+.compare-card h4 { text-transform: none; letter-spacing: 0; font-size: 1.1rem; }
+.compare-card p { text-align: left; }
 
 .proof-band {
   background: linear-gradient(135deg, var(--ink), var(--ink-deep));
