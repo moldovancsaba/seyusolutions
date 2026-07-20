@@ -8,6 +8,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        marketingAgency: resolve(__dirname, 'marketing-agency.html'),
         gtc: resolve(__dirname, 'gtc.html'),
         privacy: resolve(__dirname, 'privacy.html'),
         cookiePolicy: resolve(__dirname, 'cookie-policy.html'),
