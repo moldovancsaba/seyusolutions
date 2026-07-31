@@ -1,7 +1,6 @@
 # Seyu Solutions — Repository & Issue Audit
 
 **Date:** 2026-06-30
-**Branch:** `claude/repo-sandbox-issue-audit-tz7yl3`
 **Repo:** `moldovancsaba/seyusolutions`
 
 ---
