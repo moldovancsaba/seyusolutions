@@ -12,6 +12,7 @@ export default defineConfig({
         gtc: resolve(__dirname, 'gtc.html'),
         privacy: resolve(__dirname, 'privacy.html'),
         cookiePolicy: resolve(__dirname, 'cookie-policy.html'),
+        founder: resolve(__dirname, 'founder.html'),
       }
     }
   }
