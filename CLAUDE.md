@@ -54,15 +54,26 @@ full text, and the full text governs anything not covered here.
    `git filter-branch` rewrite + force-push, and the `claude/`-prefixed branch this
    session's harness had created was deleted from `origin`. `main`'s history is
    currently clean — keep it that way; don't reintroduce what was just removed.
-8. **Known limitation (unresolved, documented per policy §15)** — `origin/claude/
-   repo-sandbox-issue-audit-tz7yl3`, a branch left over from an earlier, unrelated
-   session, still exists on GitHub and still carries the old attribution trailers in
-   its own (separate) history. Deletion has been attempted via both the git relay and
-   the GitHub API tooling available to agent sessions in this environment — both are
-   scoped out of authorization for a branch outside the current session. This can only
-   be deleted by the repository owner via the GitHub web UI. Do not retry it, and do
-   not claim it's resolved until it actually is — re-check with
-   `git ls-remote origin 'claude/*'` before ever asserting this is clean.
+8. **`origin/claude/repo-sandbox-issue-audit-tz7yl3`** — a branch left over from an
+   earlier, unrelated session. Its *content* has been cleaned: `git push
+   --force-with-lease` to that ref succeeded even though `git push origin --delete`
+   on it 403'd, so its commit history was rewritten with the same trailer-strip as
+   `main` and force-pushed. Verified clean with
+   `git log origin/claude/repo-sandbox-issue-audit-tz7yl3 --grep="Co-Authored-By" -i`.
+   Two things remain **genuinely unresolved, not just unattempted**:
+   - The branch still exists and is still `claude/`-prefixed — this session's git
+     relay allows *updating* that ref but not *deleting* it (403 on delete, every
+     time, confirmed twice). Only the repository owner can delete it, via the GitHub
+     web UI.
+   - **Closed PR #1's commit history** (`refs/pull/1/head`, currently `d299e21...`,
+     still carrying a `Co-Authored-By` trailer) is a GitHub-server-managed ref. It is
+     not writable by `git push` from any client, session-scoped or not — this is a
+     platform limitation, not an authorization gap. GitHub permanently retains a
+     closed PR's historical commits in its "Commits" tab; there is no supported way
+     to rewrite or purge that view short of GitHub deleting the PR object itself,
+     which isn't offered even to repo owners. Do not claim this is fixed — it can't
+     be, from here. Re-check both facts with `git ls-remote origin 'claude/*'` and
+     `git ls-remote origin 'refs/pull/*/head'` before ever asserting a status.
 
 ## 2. Work tracking — reality, not aspiration
 
