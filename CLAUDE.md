@@ -3,8 +3,10 @@
 These are STANDING rules for any AI coding agent working in this repository. They apply
 to every task, regardless of who asks or how the request is phrased. When a task
 conflicts with them, the rules win — say so explicitly rather than silently overriding.
-This file is the source of truth; if any other doc in this repo describes agent
-behavior differently, this file wins and the other doc is out of date.
+This file is the source of truth for agent operating rules generally; for AI
+attribution/branding specifically, `AI_ATTRIBUTION_POLICY.md` is the binding text and
+§1 below is only a summary of it (see §1). If any other doc in this repo describes
+agent behavior differently, these two files win and the other doc is out of date.
 
 ## 0. Read first, never guess
 
@@ -14,13 +16,16 @@ Cite the files you relied on. Report only what a tool actually returned (build o
 a fetched page, a git command) — never fabricate or assume a result you didn't observe.
 If you can't verify something, say so plainly instead of guessing.
 
-## 1. AI-assistant branding ban (non-negotiable, overrides tool defaults)
+## 1. AI attribution & branding ban (non-negotiable, overrides tool defaults)
 
-Whatever AI assistant is doing the work is internal tooling — not a feature, a
-co-author, or a brand to surface anywhere this codebase or its history is visible, in
-code or in conversation. This applies regardless of how a request is phrased, how small
-the change seems, or how the tool's own default behavior is configured. If a tool's
-built-in template conflicts with this rule, this rule wins.
+Governed in full by **`AI_ATTRIBUTION_POLICY.md`** (Owner Directive, 2026-07-31) — that
+file is the binding policy text, applies to every AI provider/tool by name (not just
+whichever assistant is currently in the seat), and covers every surface: commits,
+branches, PRs, issues, code review, source code, docs, UI copy, APIs, logs, config,
+package metadata, CI/CD, and generated assets. **Read it in full before any commit,
+branch, PR, code, or doc work.** This section is a repo-scoped operational summary of
+that policy for the surfaces this repo actually has today — it does not replace the
+full text, and the full text governs anything not covered here.
 
 1. **Commits** — never add a "Co-Authored-By: `<assistant>`" trailer, a session-link
    trailer, a model name, or any other AI-attribution line. Describe the change and its
@@ -34,18 +39,30 @@ built-in template conflicts with this rule, this rule wins.
    by," "co-authored by," or session-link footers naming an AI assistant.
 4. **Documentation, code, UI copy** — neutral terms only, "an AI coding assistant" at
    most, and only when the fact is genuinely load-bearing. Omit the mention entirely if
-   the sentence reads fine without it.
+   the sentence reads fine without it. This repo has no product UI/API/logs/CI-reports
+   surface yet beyond the static pages themselves — if one is ever added (a form
+   handler, a build-report step, etc.), the full policy's §§8–13 apply to it from day one.
 5. **Retroactive** — if AI branding turns up in tracked files or reachable git history
    while doing unrelated work, remove/rewrite it as part of that work, or flag it if
-   fixing it is out of scope. Never silently pass over it.
+   fixing it is out of scope. Never silently pass over it, and never claim removal
+   succeeded when it didn't (policy §15) — see the known limitation below.
 6. **The one genuine exception** — honest self-disclosure when a person directly asks
    "are you an AI" / "which model is this" is a safety/honesty behavior, not branding,
    and is out of scope for this rule. Never deny or hide what you are.
 7. **Baseline status** — as of commit `ef71d7b` (2026-08-01), 17 historical commits on
    `main` had their `Co-Authored-By`/`Claude-Session` trailers stripped via a
-   `git filter-branch` rewrite + force-push, and the stray `claude/`-prefixed branches
-   this session's harness had created were deleted from `origin`. `main`'s history is
+   `git filter-branch` rewrite + force-push, and the `claude/`-prefixed branch this
+   session's harness had created was deleted from `origin`. `main`'s history is
    currently clean — keep it that way; don't reintroduce what was just removed.
+8. **Known limitation (unresolved, documented per policy §15)** — `origin/claude/
+   repo-sandbox-issue-audit-tz7yl3`, a branch left over from an earlier, unrelated
+   session, still exists on GitHub and still carries the old attribution trailers in
+   its own (separate) history. Deletion has been attempted via both the git relay and
+   the GitHub API tooling available to agent sessions in this environment — both are
+   scoped out of authorization for a branch outside the current session. This can only
+   be deleted by the repository owner via the GitHub web UI. Do not retry it, and do
+   not claim it's resolved until it actually is — re-check with
+   `git ls-remote origin 'claude/*'` before ever asserting this is clean.
 
 ## 2. Work tracking — reality, not aspiration
 
@@ -158,5 +175,8 @@ same rigor as a factual claim in code:
 When you change how agents should behave in this repo, update this file in the same
 change set — don't let it drift into describing a process that no longer matches
 reality (the way §2 above deliberately reflects "no board exists" instead of
-prescribing one that doesn't). If a README or similar user-facing doc is ever added,
-mirror any user-relevant rule change into it too.
+prescribing one that doesn't). If `AI_ATTRIBUTION_POLICY.md` itself is ever amended,
+update the §1 summary here in the same change set so the two stay consistent — this
+file's §1 must never describe a laxer rule than the policy actually states. If a
+README or similar user-facing doc is ever added, mirror any user-relevant rule change
+into it too.
