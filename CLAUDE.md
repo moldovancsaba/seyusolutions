@@ -99,7 +99,7 @@ gate is a clean build. "Done" means, explicitly checked, not assumed:
 - `npm run build` (`vite build`) completes with **zero errors and zero warnings**
   across every page listed in `vite.config.js`'s `build.rollupOptions.input`. Fix the
   root cause — never ignore or suppress a warning.
-- For any visual/UI change: actually render it in a real browser (see §7 for how,
+- For any visual/UI change: actually render it in a real browser (see §8 for how,
   given this sandbox's constraints) at both desktop and mobile widths, and look at the
   screenshot — don't claim a visual fix works without having seen it render. Check both
   light and dark theme where a page supports a toggle.
@@ -139,10 +139,20 @@ same rigor as a factual claim in code:
   history rewrite was already authorized and completed (§1.7). That authorization was
   scoped to that specific cleanup, not standing permission to rewrite history again.
 - Deleting a branch that belongs to a *different* session/token than the current one
-  will 403 from this environment's git relay (see §7) — that is a hard platform limit,
+  will 403 from this environment's git relay (see §8) — that is a hard platform limit,
   not something to route around; tell the user it needs to be done from the GitHub UI.
 
-## 6. Release mechanics (verify before you touch)
+## 6. Versioning — a deliberate non-decision
+
+`package.json`'s `"version"` has been `0.0.0` since the first commit, through 40+ commits and two
+full visual rebrands, and no git tag has ever been cut (`git tag -l` is empty). This is
+intentional, not an oversight: the package is `"private": true`, has no external consumers, and
+is never published to any registry — it exists solely as Vite's build-input manifest. Don't
+"fix" this by starting to bump the version or adding a `CHANGELOG.md`; there is nothing consuming
+either. If that ever changes (e.g. this becomes a template other repos pull from), revisit this
+section explicitly rather than silently starting to version.
+
+## 7. Release mechanics (verify before you touch)
 
 - Build tool: Vite 8, vanilla HTML/CSS/JS, no framework. `npm ci` before `npm run
   build`/`vite preview` in a fresh checkout — Vite is a devDependency, not vendored.
@@ -158,7 +168,7 @@ same rigor as a factual claim in code:
 - Verify a deploy actually succeeded by checking the workflow run's conclusion (GitHub
   Actions), not by assuming a push = a successful deploy.
 
-## 7. Environment quirks discovered in practice (this sandbox)
+## 8. Environment quirks discovered in practice (this sandbox)
 
 - Playwright is installed globally but not in this repo's `node_modules`. Run scripts
   with `NODE_PATH=$(npm root -g) node script.js`, and launch Chromium with
@@ -181,7 +191,7 @@ same rigor as a factual claim in code:
   scope (e.g. one left over from a different/older session) returns `HTTP 403`. Don't
   retry it or try to work around it — report it and point the user to the GitHub UI.
 
-## 8. Keeping this file correct
+## 9. Keeping this file correct
 
 When you change how agents should behave in this repo, update this file in the same
 change set — don't let it drift into describing a process that no longer matches
