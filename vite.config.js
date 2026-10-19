@@ -7,12 +7,12 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        marketingAgency: resolve(__dirname, 'marketing-agency.html'),
-        gtc: resolve(__dirname, 'gtc.html'),
-        privacy: resolve(__dirname, 'privacy.html'),
-        cookiePolicy: resolve(__dirname, 'cookie-policy.html'),
-        founder: resolve(__dirname, 'founder.html'),
+        main: resolve(import.meta.dirname, 'index.html'),
+        marketingAgency: resolve(import.meta.dirname, 'marketing-agency.html'),
+        gtc: resolve(import.meta.dirname, 'gtc.html'),
+        privacy: resolve(import.meta.dirname, 'privacy.html'),
+        cookiePolicy: resolve(import.meta.dirname, 'cookie-policy.html'),
+        founder: resolve(import.meta.dirname, 'founder.html'),
       }
     }
   }

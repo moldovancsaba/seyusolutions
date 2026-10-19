@@ -245,3 +245,27 @@ a Vite build input list. See `CLAUDE.md` for the standing note so this isn't re-
 **Confirmed as genuinely not present (not gaps — this product doesn't have these):** no tour/
 onboarding feature or copy anywhere; no i18n/locale/translation files of any kind — the site is
 single-language by design, and `lang="en"` is correct for that (see the C‑4 breakdown above).
+
+
+## 7. 2026-10-19 — Repository welcome and build-tool maintenance
+
+### New Features
+- Added a root README identifying this repository as the static marketing website, with a six-page source map, local commands, contribution references and the existing publication/recovery path.
+- Connected the welcome delivery to [portfolio task 930](https://github.com/moldovancsaba/mvp-factory-control/issues/930). This does not replace this product audit log or establish a new product board.
+
+### Fixed Bugs
+- Refreshed the lockfile within the unchanged `vite: ^8.0.4` manifest range: Vite 8.0.7 → 8.3.4 and its resolved build dependencies. The baseline reported four high advisories; the refreshed candidate reported zero advisories on 2026-10-19.
+- Replaced the six legacy `__dirname` references in the ESM Vite configuration with `import.meta.dirname`. This fixes the native configuration-loader warning without suppressing warnings. The project base and all six HTML inputs remain unchanged.
+- Verified the exact candidate lock blob `6f517c4569643f7c7128995df94eff33bee1acae` and config blob `dc1d4c1ffb921fe795a5c82a8bc38c9d5a198c7c` before committing. [Preflight run 39249014364](https://github.com/moldovancsaba/mvp-factory-control/actions/runs/39249014364) used Node.js 24 against source revision `4847210218ac4da18551388effa7a3a14227f42b`, installed cleanly, built all six HTML outputs with zero build warnings/errors, and served all six under `/seyusolutions/`.
+- Independently confirmed the configured public URL returned HTTP 200 with the expected title and canonical URL in the same preflight. Publication of this change must still be verified through its own deployment run.
+
+### Known Issues
+- No separate automated test or lint suite is configured. This check covers installation, build, six-page preview and destination identity, not a new visual or legal-content audit.
+- Existing social-image and historical-reference follow-ups remain as documented in earlier entries and the operating guide. No history, branch, biography, statistics or legal-copy rewrite is included.
+- Earlier deployment notes are historical: the current workflow builds on Node.js 20 and publishes `dist/` to `gh-pages`. Its actual post-push result must be checked.
+- A preliminary lockfile-only attempt encountered an npm internal error on Node.js 20; candidate generation and pre-commit verification succeeded on Node.js 24. The unchanged production workflow remains the post-push Node.js 20 validation.
+- Package version `0.0.0` remains intentional. Advisory results are a dated observation, not a permanent security guarantee.
+
+### Future Roadmap
+- Verify this revision's publication and public destination, then reconcile the portfolio register and About metadata.
+- Keep future page changes subject to clean-build and applicable desktop/mobile checks. Resolve existing social-image and historical-reference follow-ups in their own reviewed scope.
