@@ -269,3 +269,7 @@ single-language by design, and `lang="en"` is correct for that (see the C‑4 br
 ### Future Roadmap
 - Verify this revision's publication and public destination, then reconcile the portfolio register and About metadata.
 - Keep future page changes subject to clean-build and applicable desktop/mobile checks. Resolve existing social-image and historical-reference follow-ups in their own reviewed scope.
+
+## 2026-11-15 — Read-only project-board review
+
+Project 38 and the full repository issue collection were read; no cards/issues were returned. Journal: [docs/PROJECT_BOARD_MOVEMENT_LOG.md](docs/PROJECT_BOARD_MOVEMENT_LOG.md). Corrected the old board-absence premise in CLAUDE.md. No board write or product change. Build verification is recorded in the journal.

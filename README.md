@@ -52,3 +52,5 @@ The existing [deployment workflow](.github/workflows/deploy.yml) runs on pushes 
 The private build package intentionally remains at version `0.0.0`; it is not a published package. Git commits identify website revisions. Keep release details in the audit log rather than introducing package releases or a separate changelog.
 
 The 19 October 2026 candidate check built and previewed all six pages with no build warnings or errors. The bounded lockfile refresh retained the existing Vite manifest range and returned zero advisories at that check; future dependency reports can change. Historical audit entries describe their own revision and are not blanket assertions about today's website. Existing social-image and historical-reference follow-ups remain in the audit and operating guide.
+
+[Project board review and manual movement journal](docs/PROJECT_BOARD_MOVEMENT_LOG.md).

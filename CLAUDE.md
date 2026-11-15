@@ -77,8 +77,7 @@ full text, and the full text governs anything not covered here.
 
 ## 2. Work tracking — reality, not aspiration
 
-There is no GitHub Projects v2 board in active use for this repo, and no label-based
-column system consuming issue labels. Do not invent one. As of this writing the repo's
+Current verification (2026-11-15): associated Project 38 is readable and empty. The owner requires its board to remain read-only; record conditional movement proposals in docs/PROJECT_BOARD_MOVEMENT_LOG.md. No label-based column system is in use. Do not invent one. As of this writing the repo's
 issue tracker has **0 open and 0 closed issues** (verified via `list_issues`), and a
 prior audit found issue creation restricted on this repo — re-verify before assuming
 issues can be filed rather than assuming either way.
